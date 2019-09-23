@@ -1,0 +1,48 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+int main()
+{
+
+    int num1;
+    int num2;
+    cin>>num1>>num2;
+
+    char operation;
+    cin>>operation;
+
+    while (true)
+    {
+        if (operation=='+')
+        {
+            cout<<num1+num2;
+            break;
+        }
+        else if (operation=='-')
+        {
+            cout<<num1-num2;
+            break;
+        }
+        else if (operation=='*')
+        {
+            cout<<num1*num2;
+            break;
+
+        }
+        else if (operation=='/')
+        {
+            cout<<num1/num2;
+            break;
+        }
+        else
+        {
+            cout<<"Try again"<<endl;
+            cin>>operation;
+        }
+    }
+
+    return 0;
+}
