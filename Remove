@@ -45,3 +45,53 @@ int main()
     return 0;
 
 }
+
+
+//SECOND APPROACH
+
+#include <iostream>
+#include <vector>
+
+std::vector <int> readInput()
+{
+    int size=0;
+    std::cin>>size;
+
+    std::vector<int>vec(size);
+
+    for (size_t i=0; i<vec.size(); ++i)
+    {
+        std::cin>>vec[i];
+    }
+    return vec;
+}
+
+void removeOccurrences(const std::vector<int>&vector, int numberToRemove)
+{
+    int s=0;
+    s=vector.size();
+    for (size_t i=0; i<s; ++i)
+    {
+        if (vector[i]!=numberToRemove)
+        {
+            std::cout<<vector[i]<<" ";
+        }
+    }
+}
+
+int main()
+{
+    const std::vector<int> vec=readInput();
+    int num;
+    std::cin>>num;
+    removeOccurrences(vec,num);
+
+
+
+
+
+
+    return 0;
+
+}
+
