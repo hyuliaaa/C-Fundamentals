@@ -1,0 +1,47 @@
+//Program to remove all occurrences of a number in an array
+
+
+//FIRST APPROACH
+#include <iostream>
+const int SIZE=100;
+
+void readArray(int arr[], int n)
+
+{
+
+    for (int i=0; i<n; i++)
+
+    {
+        std::cin>>arr[i];
+    }
+
+}
+
+void removeOccurences(int *arr, int n, int numToRemove)
+{
+    for (int i=0; i<n; i++)
+    {
+        if (arr[i]!=numToRemove)
+        {
+            std::cout<<arr[i]<<" ";
+        }
+    }
+
+}
+
+
+int main()
+
+{
+
+    int arr[SIZE]={0};
+    int n;
+    std::cin>>n;
+    readArray(arr,n);
+    int num;
+    std::cin>>num;
+    removeOccurences(arr,n,num);
+
+    return 0;
+
+}
