@@ -38,3 +38,55 @@ int main()
 
     return 0;
 }
+
+
+//SECOND APPROACH
+#include <iostream>
+#include <vector>
+
+std::vector <int > readInput()
+{
+
+    int size;
+    std::cin>>size;
+
+    std::vector<int> vec(size);
+    for (size_t i=0; i<size; ++i )
+    {
+        std::cin>>vec[i];
+    }
+    return vec;
+}
+
+int findIndex(const std::vector<int> &numbers, int num)
+{
+    int result=-1;
+    const int SIZE=numbers.size();
+    for (size_t i=0; i<SIZE; ++i)
+    {
+        if (numbers[i]==num)
+        {
+            result=i;
+            break;
+        }
+    }
+    return result;
+}
+
+
+
+int main()
+{
+    const std:: vector <int> vec=readInput();
+    int num;
+    std::cin>>num;
+    std::cout<<findIndex(vec,num);
+
+
+
+
+
+
+    return 0;
+}
+
