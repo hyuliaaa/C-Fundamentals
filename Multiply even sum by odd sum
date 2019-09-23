@@ -1,0 +1,50 @@
+//program that reads an integer and prints the sum of its odd digits by the sum of it even digits
+#include <iostream>
+#include <vector>
+
+
+int main()
+{
+    int n;
+    std::cin>>n;
+    std::vector<int> digitArray;
+//finding each digit and pushing it in a vector
+    while (n>0)
+    {
+        int digit=n%10;
+        n/=10;
+
+        digitArray.push_back(digit);
+    }
+
+
+    int s=digitArray.size();
+
+    int sumOfEvenDigits=0;
+    int sumOfOddDigits=0;
+
+    for (int i=s-1; i>=0; i--)
+    {
+        if (digitArray[i]%2==0)
+        {
+            sumOfEvenDigits+=digitArray[i];
+        }
+        else
+        {
+            sumOfOddDigits+=digitArray[i];
+        }
+    }
+
+    int product=0;
+
+    product=sumOfEvenDigits*sumOfOddDigits;
+
+    std::cout<<product<<std::endl;
+
+
+
+
+
+    return 0;
+
+}
