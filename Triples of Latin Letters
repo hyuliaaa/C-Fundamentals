@@ -1,0 +1,30 @@
+// program to read an integer n and print all triplets of the first n small Latin letters, ordered alphabetically
+#include <iostream>
+#include <iostream>
+
+int main()
+{
+
+    int size;
+    std::cin>>size;
+    char firstLatinLetter='a';
+
+    for (int i=0; i<size; i++)
+    {
+        for (int j=0; j<size; j++)
+        {
+            for (int k=0; k<size; k++)
+            {
+                std::cout<<char(firstLatinLetter+i)
+                <<char (firstLatinLetter+j)
+                <<char (firstLatinLetter+k)
+                <<std::endl;
+            }
+        }
+    }
+
+
+
+    return 0;
+
+}
