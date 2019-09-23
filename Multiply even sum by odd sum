@@ -1,4 +1,6 @@
 //program that reads an integer and prints the sum of its odd digits by the sum of it even digits
+
+//FIRST APPROACH-USING VECTORS
 #include <iostream>
 #include <vector>
 
@@ -48,3 +50,73 @@ int main()
     return 0;
 
 }
+
+//SECOND APPROACH-USING DYNAMIC MEMORY ALLOCATION
+#include <iostream>
+#include <vector>
+
+
+int main()
+{
+    int n;
+    std::cin>>n;
+
+    int copyN=n;
+    int counter=0;
+
+    while (copyN>0)
+    {
+        copyN/=10;
+        counter++;
+    }
+    std::cout<<counter<<std::endl;
+
+    int *a=new int[counter];
+    int copyCount=counter;
+
+    while (n>0)
+    {
+        int digit=n%10;
+
+        a[--counter]=digit;
+        n/=10;
+
+    }
+
+    for (int i=0; i<copyCount; i++)
+    {
+
+        std::cout<<a[i]<<" ";
+    }
+    std::cout<<std::endl;
+
+    int sumOfEvenDigits=0;
+    int sumOfOddDigits=0;
+
+    for (int i=0; i<copyCount; i++)
+    {
+        if (a[i]%2==0)
+        {
+            sumOfEvenDigits+=a[i];
+        }
+        else
+        {
+            sumOfOddDigits+=a[i];
+        }
+    }
+
+    int product=0;
+
+    product=sumOfEvenDigits*sumOfOddDigits;
+
+    std::cout<<product<<std::endl;
+
+    delete []a;
+
+
+
+
+    return 0;
+
+}
+
