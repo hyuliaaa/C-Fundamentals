@@ -46,3 +46,78 @@ int main()
 
     return 0;
 }
+
+
+
+///SECOND APPROACH TO SOLVING THE PROBLEM
+#include <iostream>
+#include <vector>
+
+
+std::vector <int> readInput()
+{
+    std::vector <int> vec(2);
+    std::cin>>vec[0]>>vec[1];
+    return vec;
+}
+
+int calculateOperation(char operation, const std::vector<int> &numbers)
+{
+    int result=0;
+    switch(operation)
+    {
+    case '+':
+        result=numbers[0]+numbers[1];
+        break;
+    case '-':
+        result=numbers[0]-numbers[1];
+        break;
+    case '*':
+        result=numbers[0]*numbers[1];
+        break;
+    case '/':
+        if (numbers[1==0])
+        {
+           std:: cout<<"Cannot divide by 0"<<std::endl;
+        }
+        else{
+        result=numbers[0]/numbers[1];
+        }
+
+        break;
+    default:
+        result=INT_MIN;
+        break;
+
+
+    }
+}
+
+
+int main()
+{
+    const std::vector <int> vec=readInput();
+    char operation;
+    std::cin>>operation;
+
+    int result=INT_MIN;
+
+    while(result==INT_MIN)
+    {
+        std::cin>>operation;
+        result=calculateOperation(operation,vec);
+        if (result!=INT_MIN)
+        {
+            std::cout<<result<<std::endl;
+        }
+        else
+        {
+            std::cout<<"Try again"<<std::endl;
+        }
+    }
+
+
+
+    return 0;
+}
+
