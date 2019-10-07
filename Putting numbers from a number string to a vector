@@ -1,0 +1,26 @@
+    #include <iostream>
+    #include <sstream>
+    #include <vector>
+
+    int main()
+    {
+       std::string line;
+       getline(std::cin,line);
+
+       std::istringstream lineStream(line);
+       int currentNum;
+       std::vector <int> numbers;
+
+       while(lineStream>>currentNum)
+       {
+           numbers.push_back(currentNum);
+       }
+
+       for (auto i:numbers)
+       {
+           std::cout<<i<<" ";
+       }
+
+
+        return 0;
+    }
