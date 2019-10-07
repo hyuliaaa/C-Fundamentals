@@ -1,0 +1,18 @@
+#include <iostream>
+#include <sstream>
+
+int main()
+{
+	std::istringstream in ("a word");
+	std::string line;
+	getline(in,line);
+	std::cout<<line<<std::endl;
+
+	std::istringstream inn("a.word");
+	std::string word;
+	getline(inn,word, '.');
+	std::cout<<word<<std::endl;
+
+
+	return 0;
+}
