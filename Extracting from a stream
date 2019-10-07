@@ -1,0 +1,25 @@
+#include <iostream>
+#include <sstream>
+
+///extracting from a string
+
+int main()
+{
+    std::string str="7 -2  house";
+    std::istringstream extractFromStream(str);
+    int num1;
+    int num2;
+    std::string word;
+
+    extractFromStream>>num1>>num2>>word;
+    int sum=num1+num2;
+
+    std::ostringstream stream;
+	stream << "The sum is " << num1 + num2 << '\n' << word << '\n';
+    std::cout << stream.str();
+
+
+
+    return 0;
+
+}
