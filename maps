@@ -1,0 +1,73 @@
+#include <iostream>
+#include <map>
+#include <string>
+#include <utility>
+using namespace std;
+
+int main()
+{
+    map<string, int> cityPopulations=
+    {
+        pair<string, int>{"Gabrovo", 58950},
+        pair<string, int>{"Sofia", 1307376},
+        pair<string, int>{"Melnik", 385}
+    };
+
+
+    map<string,int>::iterator it;///iterator
+    for(it=cityPopulations.begin(); it!=cityPopulations.end(); it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+    cout<<endl;
+
+    cityPopulations["Sofia"]++;///adds 1 to Sofia's population
+    cityPopulations["Veliko Tarnovo"]=72938; ///creates a new city
+    cityPopulations.insert(pair<string, int>("Pliska",0)); ///inserts a new city
+
+
+    ///prints them in alphabetical order
+    for(it=cityPopulations.begin(); it!=cityPopulations.end(); it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+
+
+    cout<<endl;
+
+    ///Pliska is an ancient city, let's remove it
+    cityPopulations.erase("Pliska");
+
+
+    for(it=cityPopulations.begin(); it!=cityPopulations.end(); it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+
+
+
+    cout<<"Enter a city name to see its population: ";
+    string searchCityName;
+    getline(cin, searchCityName);
+
+    map<string, int>::iterator foundCity=cityPopulations.find(searchCityName);
+
+    if(foundCity!=cityPopulations.end())
+    {
+        cout<<foundCity->first<<" "<<foundCity->second<<endl;
+
+    }
+    else
+    {
+        cout<<"No information";
+    }
+
+
+
+
+
+
+
+    return 0;
+
+}
