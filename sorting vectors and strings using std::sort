@@ -1,0 +1,29 @@
+#include <iostream>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+
+    vector <int> vec{10,1,2,5,3,8,4};
+    sort(vec.begin(),vec.end());
+    for(int num: vec)
+    {
+        cout<<num<<" ";
+    }
+
+    string wordArray[6] {"whales", "cats", "dogs", "fish", "cheetahs", "dodos"};
+    sort(wordArray,wordArray+6);
+
+    for(string word:wordArray)
+    {
+        cout<<word<<endl;
+    }
+
+    return 0;
+
+}
