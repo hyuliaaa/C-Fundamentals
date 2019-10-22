@@ -1,0 +1,26 @@
+#include <iostream>
+#include <list>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    list<int> nums {61, 41,231, 764, 54};
+    nums.sort();
+
+    for(int num: nums)
+    {
+        cout<<num<<" ";
+    }
+    cout<<endl;
+
+    nums.sort(std::greater<int>());
+    for(int num:nums)
+    {
+        cout<<num<<" ";
+    }
+
+
+    return 0;
+
+}
